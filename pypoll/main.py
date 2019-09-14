@@ -27,24 +27,11 @@ with open(voter_csv, newline='') as csvfile:
             candidateDict[row[2]] = 0 
         candidateDict[row[2]] += 1
     #print(candidateDict)
-    print('\n')
-    print('Election Results:')
-    print(lineBreak)
-    print("Total Votes:",totalvotes)
-    print(lineBreak)
 
     # find and print the name, vote percent, and total votes 
     for name, votes in candidateDict.items():
         vote_percent = votes / totalvotes
 
-        print(name,':','{:.2%}'.format(vote_percent),"(",votes,")")
-    print(lineBreak)
-    print("Winner:", str(max(candidateDict, key=candidateDict.get)))
-    print(lineBreak)
-    print('\n')
-
-
-textFileInfo = f"Election Results:"'\n'f"{lineBreak}"'\n'f'Total Votes: {totalvotes}'
 
 with open ("pollFile.txt", 'w') as f: 
     f.write(f"Election Result\n")
